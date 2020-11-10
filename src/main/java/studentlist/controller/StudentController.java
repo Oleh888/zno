@@ -1,6 +1,7 @@
 package studentlist.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import studentlist.model.Student;
 import studentlist.repository.StudentRepository;
@@ -26,7 +27,7 @@ public class StudentController {
     }
 
     @GetMapping("/love")
-    public Student getLove() {
-        return studentRepository.findByPib("Максимів О. В.");
+    public Student getLove(@RequestParam String pib) {
+        return studentRepository.findByPib(pib);
     }
 }
