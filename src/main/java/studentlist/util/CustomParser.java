@@ -35,7 +35,7 @@ public class CustomParser {
     private Student getStudentFromLine(String line) {
         String[] info = line.split("\t");
         return new Student(info[1], Double.parseDouble(info[3]),
-                            info[4].matches("бюджет"));
+                            info[4].equals("До наказу (бюджет)"));
     }
 
     public List<Student> saveStudentsToDB(List<Student> students) {
